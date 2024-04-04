@@ -41,6 +41,13 @@ func HostKeyFile(filepath string) Option {
 		return nil
 	}
 }
+// HostKeyCallback returns a functional option that sets HostKeyCallback on the server.
+func HostKeyCallback(fn HKCallback) Option {
+    return func(srv *Server) error {
+        srv.AddHostKey(fn)
+        return nil
+    }
+}
 
 func KeyboardInteractiveAuth(fn KeyboardInteractiveHandler) Option {
 	return func(srv *Server) error {
