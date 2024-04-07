@@ -22,14 +22,6 @@ func PublicKeyAuth(fn PublicKeyHandler) Option {
 	}
 }
 
-// HostKeyCallback returns a functional option that sets HostKeyCallback on the server.
-func HostKeyCallback(fn HKCallback) Option {
-	return func(srv *Server) error {
-		srv.AddHostKey(fn)
-		return nil
-	}
-}
-
 // HostKeyFile returns a functional option that adds HostSigners to the server
 // from a PEM file at filepath.
 func HostKeyFile(filepath string) Option {

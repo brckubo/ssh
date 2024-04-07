@@ -45,9 +45,6 @@ type PublicKeyHandler func(ctx Context, key PublicKey) bool
 type PasswordHandler func(ctx Context, password string) bool
 
 // KeyboardInteractiveHandler is a callback for performing keyboard-interactive authentication.
-type HKCallback func(ctx Context) Signer
-
-// KeyboardInteractiveHandler is a callback for performing keyboard-interactive authentication.
 type KeyboardInteractiveHandler func(ctx Context, challenger gossh.KeyboardInteractiveChallenge) bool
 
 // PtyCallback is a hook for allowing PTY sessions.
